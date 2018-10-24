@@ -31,13 +31,14 @@ export class Heart extends Component {
             />
           </p>
 
-          <figure className="not-ready">
+          <figure className="Heart-Figure Heart-Figure__not-ready">
             <video className="Heart-Video" width="240" autoPlay />
-            <canvas width="240" className="visible" />
-            <canvas width="240" className="hidden" />
+            <canvas width="240" className="Heart-Canvas Heart-Canvas__visible" />
+            <canvas width="240" className="Heart-Canvas Heart-Canvas__hidden" />
           </figure>
 
           <Button className="Heart-Button" bsStyle="success" bsSize="large" id="record" disabled>Record</Button>
+          &nbsp;
           <Button className="Heart-Button" bsStyle="success" bsSize="large" id="convert" disabled>Convert to a GIF</Button>
         </div>
 
@@ -65,6 +66,7 @@ export class Heart extends Component {
           </blockquote>
 
           <Button className="Heart-Button Heart-Button__start-over" bsStyle="default" bsSize="large">Start over</Button>
+          &nbsp;
           <Button className="Heart-Button" bsStyle="success" bsSize="large" id="upload" disabled>Upload to Imgur.com</Button>
         </div>
 
