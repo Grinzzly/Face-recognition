@@ -1,1 +1,2 @@
-export * from './heart';
+export * from './Heart';
+export * from './Recorder';
