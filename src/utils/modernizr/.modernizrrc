@@ -1,0 +1,13 @@
+{
+  "minify": true,
+  "options": [
+    "prefixed",
+    "setClasses"
+  ],
+  "feature-detects": [
+    "typed-arrays",
+    "file/api",
+    "webrtc/getusermedia",
+    "workers/webworkers"
+  ]
+}
