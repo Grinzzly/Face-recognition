@@ -41,7 +41,7 @@ export class Recorder extends Component {
     return new Promise(() => {
       const getUserMedia = Modernizr.prefixed('getUserMedia', navigator);
 
-      // if front camera is available - use it
+      /* INFO: if front camera is available - use it */
       if (frontCameraId) {
         this.videoSettings.video.optional.push({
           sourceId: frontCameraId,
@@ -49,7 +49,7 @@ export class Recorder extends Component {
       }
 
       getUserMedia(this.videoSettings, (stream) => {
-        // Setup the video stream
+        /* INFO: Setup the video stream */
         this.setState({ videoSource: window.URL.createObjectURL(stream) });
 
         window.stream = stream;
@@ -85,8 +85,7 @@ export class Recorder extends Component {
       let pictureHeight = VIDEO.HEIGHT;
 
       if (!pictureWidth && !pictureHeight) {
-        // Firefox fails to deliver info about video size on time (issue #926753)
-
+        /* INFO: Firefox fails to deliver info about video size on time (issue #926753) */
         const waitingForSize = setInterval(() => {
           if (this.videoSettings.video.videoWidth && this.videoSettings.video.videoHeight) {
             pictureWidth = this.videoSettings.video.videoWidth;
