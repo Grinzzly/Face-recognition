@@ -22,7 +22,7 @@ export class Heart extends Component {
 
   initialLoading() {
     checker()
-      .then(this.loadImages())
+      .then(() => this.loadImages())
       .then(() => {
         /*
         * TODO: Enable record button
