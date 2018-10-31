@@ -50,7 +50,7 @@ export class Heart extends Component {
     const promises = [];
 
     /*
-    * TODO: amount of images hardcoded for time being
+    * TODO: amount of images hardcoded for time being (it is 14)
     * INFO: for sure
     */
     // eslint-disable-next-line
