@@ -1,1 +1,0 @@
-export { checker } from './checker';
