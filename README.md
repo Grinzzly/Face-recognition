@@ -12,9 +12,6 @@
   </a>
   &nbsp;
   <img src="https://img.shields.io/badge/60%25%20of%20the%20time-works%20every%20time-blue.svg" alt="Quality">
-  <br>
-  <br>
-  <img width="300" src="./public/images/freeze.jpg" alt="Code Freeze">
 </div>
 
 ## About

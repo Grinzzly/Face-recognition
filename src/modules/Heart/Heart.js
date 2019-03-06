@@ -5,7 +5,6 @@ import { Jumbotron } from 'react-bootstrap';
 import { Converter } from '../Converter';
 import { Recorder } from '../Recorder';
 import { Uploader } from '../Uploader';
-import { checker } from '../../utils';
 
 import './Heart.less';
 
@@ -21,8 +20,7 @@ export class Heart extends Component {
   }
 
   initialLoading() {
-    checker()
-      .then(() => this.loadImages())
+    this.loadImages()
       .then(() => {
         /*
         * TODO: Enable record button
