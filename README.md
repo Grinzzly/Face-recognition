@@ -2,8 +2,11 @@
 
 <div align="center">
   <sub>The little face detection that detects faces. Codede by
-  <a href="https://github.com/Grinzzly">Grinzzly</a>
-  </a>
+    <a href="https://github.com/Grinzzly">Grinzzly</a>
+  </sub>
+  <br>
+  <br>
+  <img src="public/images/sneak.jpg" alt="Sneak">
   <br>
   <br>
   <a href="https://github.com/airbnb/javascript">
@@ -28,6 +31,7 @@ _Use at least 8.9.0 version of Node._
 ## Technology in use
 
 * __ReactJS based App__
+* __Face-api__
 * __Modernizr__
 * __Tracking.js__
 * __Gif.js__
