@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-
 import { Jumbotron } from 'react-bootstrap';
 
-import { Converter } from '../Converter';
-import { Recorder } from '../Recorder';
-import { Uploader } from '../Uploader';
+import { VideoOutput } from '../VideoOutput';
 
 import './Heart.less';
 
@@ -13,64 +10,27 @@ export class Heart extends Component {
     super(props);
 
     this.state = {
-      flameFrames: [],
+      video: null,
     };
 
-    this.initialLoading();
+    this.getVideo();
   }
 
-  initialLoading() {
-    this.loadImages()
-      .then(() => {
-        /*
-        * TODO: Enable record button
-        * TODO: Hide the enable the camera sign
-        */
-      })
-      .catch(error => new Error(error));
-  }
-
-  loadImage(number) {
-    /*
-    * TODO: to be replaced by cloud upload
-    * INFO: probably...idk
-    */
-
-    return new Promise((resolve) => {
-      const img = new Image();
-
-      img.src = `images/flame/${number}.png`;
-      img.onload = () => resolve(img);
+  async getVideo() {
+    const video = await navigator.mediaDevices.getUserMedia({
+      audio: false,
+      video: true,
     });
-  }
 
-  loadImages() {
-    const promises = [];
-
-    /*
-    * TODO: amount of images hardcoded for time being (it is 14)
-    * INFO: for sure
-    */
-    // eslint-disable-next-line
-    for (let i = 1; i < 14; i++) {
-      promises.push(this.loadImage(i));
-    }
-
-    Promise.all(promises).then((loadedImages) => {
-      this.setState({
-        flameFrames: loadedImages,
-      });
-    });
+    this.setState({ video });
   }
 
   render() {
-    const { flameFrames } = this.state;
+    const { video } = this.state;
 
     return (
       <Jumbotron className="Heart">
-        <Recorder flameFrames={flameFrames} />
-        <Converter />
-        <Uploader />
+        {video ? <VideoOutput video={video} /> : ''}
       </Jumbotron>
     );
   }

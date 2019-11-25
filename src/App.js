@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import {
   Heart,
@@ -6,14 +6,10 @@ import {
 
 import './App.less';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App container">
-        <Heart />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App container">
+    <Heart />
+  </div>
+);
 
 export default App;
