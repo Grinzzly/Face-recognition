@@ -8,8 +8,6 @@ import {
   matchDimensions,
   detectAllFaces,
   resizeResults,
-  createCanvasFromMedia,
-  isMediaLoaded
 } from 'face-api.js';
 
 import './VideoOutput.less';
@@ -32,6 +30,7 @@ export class VideoOutput extends Component {
     super(props);
 
     this.videoRef = createRef();
+    this.canvasRef = createRef();
   }
 
   componentDidMount() {
@@ -44,31 +43,32 @@ export class VideoOutput extends Component {
   }
 
   initCanvas = (video) => {
-    setTimeout(() => {
-      if (isMediaLoaded(video)) {
-        const canvas = createCanvasFromMedia(video);
-        document.getElementById('heart').append(canvas);
-        const displaySize = { width: video.width, height: video.height };
-        matchDimensions(canvas, displaySize);
+    const canvas = this.canvasRef.current;
+    const displaySize = { width: video.width, height: video.height };
 
-        setInterval(async () => {
-          const detections = await detectAllFaces(
-            video,
-            new TinyFaceDetectorOptions(),
-          ).withFaceLandmarks().withFaceExpressions();
-          const resizedDetections = resizeResults(detections, displaySize);
-          canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-          draw.drawDetections(canvas, resizedDetections);
-          draw.drawFaceLandmarks(canvas, resizedDetections);
-          draw.drawFaceExpressions(canvas, resizedDetections);
-        }, 100);
-      }
-    }, 1000);
+    matchDimensions(canvas, displaySize);
+
+    setInterval(async () => {
+      const detections = await detectAllFaces(
+        video,
+        new TinyFaceDetectorOptions(),
+      ).withFaceLandmarks().withFaceExpressions();
+
+      const resizedDetections = resizeResults(detections, displaySize);
+
+      canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+      draw.drawDetections(canvas, resizedDetections);
+      draw.drawFaceLandmarks(canvas, resizedDetections);
+      draw.drawFaceExpressions(canvas, resizedDetections);
+    }, 100);
   };
 
   render() {
     return (
-      <video width="720" height="560" autoPlay muted ref={this.videoRef} />
+      <div>
+        <video width="720" height="560" autoPlay muted ref={this.videoRef} />
+        <canvas width="720" height="560" ref={this.canvasRef} />
+      </div>
     );
   }
 }
