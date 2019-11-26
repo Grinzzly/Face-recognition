@@ -52,7 +52,9 @@ export class VideoOutput extends Component {
       const detections = await detectAllFaces(
         video,
         new TinyFaceDetectorOptions(),
-      ).withFaceLandmarks().withFaceExpressions();
+      )
+        .withFaceLandmarks()
+        .withFaceExpressions();
 
       const resizedDetections = resizeResults(detections, displaySize);
 

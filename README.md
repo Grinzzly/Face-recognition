@@ -33,5 +33,4 @@ _Use at least 8.9.0 version of Node._
 * __ReactJS based App__
 * __Face-api__
 * __Modernizr__
-* __Tracking.js__
 * __Gif.js__
