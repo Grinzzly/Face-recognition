@@ -67,6 +67,8 @@ export class VideoOutput extends Component {
   };
 
   render() {
-    return <video width="720" height="560" autoPlay muted ref={this.videoRef} />;
+    return (
+      <video width="720" height="560" autoPlay muted ref={this.videoRef} />
+    );
   }
 }

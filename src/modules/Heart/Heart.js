@@ -15,7 +15,7 @@ export class Heart extends Component {
       video: null,
     };
 
-    this.initFaceApi()
+    this.initDetectionMaps()
       .then(this.getVideo());
   }
 
@@ -28,7 +28,7 @@ export class Heart extends Component {
     this.setState({ video });
   }
 
-  initFaceApi() {
+  initDetectionMaps() {
     return Promise.all([
       nets.tinyFaceDetector.loadFromUri('/models'),
       nets.faceLandmark68Net.loadFromUri('/models'),
