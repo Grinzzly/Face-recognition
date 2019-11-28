@@ -6,7 +6,7 @@
   </sub>
   <br>
   <br>
-  <img src="public/images/sneak.jpg" alt="Sneak">
+  <img src="public/favicon.png" alt="Sneak">
   <br>
   <br>
   <a href="https://github.com/airbnb/javascript">
@@ -19,6 +19,7 @@
 
 ## About
 Sooner of later every dev writes face detection software.
+![demo](public/images/sneak.jpg)
 
 ## Installation & Usage
 
