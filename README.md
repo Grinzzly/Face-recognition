@@ -19,7 +19,14 @@
 
 ## About
 Sooner of later every dev writes face detection software.
+
+You may observe result [here](https://face-recognizer.netlify.com/).
+
 ![demo](public/images/sneak.jpg)
+<sub align="center">Nah. Not that one</sub>
+
+![demo](public/images/demo.jpg)
+<sub align="center">1 night and 99 cups of coffee latter</sub>
 
 ## Installation & Usage
 
