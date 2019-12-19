@@ -20,7 +20,7 @@
 ## About
 Sooner of later every dev writes face detection software.
 
-You may observe result [here](https://face-recognizer.netlify.com/).
+You may observe result [here](https://face-recognition.simplexco.de).
 
 ![demo](public/images/sneak.jpg)
 <sub align="center">Nah. Not that one</sub>
