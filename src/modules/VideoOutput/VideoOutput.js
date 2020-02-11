@@ -68,8 +68,8 @@ export class VideoOutput extends Component {
   render() {
     return (
       <div>
-        <video width="720" height="560" autoPlay muted ref={this.videoRef} />
-        <canvas width="720" height="560" ref={this.canvasRef} />
+        <video width="717" height="540" autoPlay muted ref={this.videoRef} />
+        <canvas width="717" height="540" ref={this.canvasRef} />
       </div>
     );
   }
